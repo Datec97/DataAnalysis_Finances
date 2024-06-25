@@ -1,0 +1,314 @@
+/* Acuerdate alexito:
+"SIEMPRE IR DE LO MAS GENERAL A LO MAS ESPECIFICO" */
+/*Definicion de variables en el CSS*/
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --amarillezco: #ffc107;
+    --azulejo: #0097a7;
+    --grisaseo: darkgrey;
+    --grisaseoClaro : #dfe9f3;
+}
+/* Globales */
+/*hacemos el hack para representar mejor
+los tamaños de fuente en el documento con el 'rem'*/
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* Hagamos un scroll para el proyecto final */
+    /* scroll-snap-type: y proximity; */
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+body{
+    /* font-size: 16px; */
+    /* font-family: 'Courgette', cursive; */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    background-image: linear-gradient(to top, var(--grisaseoClaro) 0% , var(--blanco) 100%);
+    
+}
+
+
+
+/* Estilos al logo */
+figure,.Click_zoom{
+    /* tamaño original: 867x252 */
+    /* max-width: 100%;
+    max-height: 75rem;  
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end; */
+}
+.Click_zoom{
+    /* padding-left: 10rem; */
+}
+img{ 
+    /* max-width: 75.18rem;
+    max-height: 25.75rem;
+    padding: 1rem; */
+    max-width: 50rem;
+}
+
+@media (max-width: 768px){
+   
+    img{
+        max-width: 100%;
+    }
+}
+
+.subtitle1{
+    font-size: 4.5rem;
+    color: blueviolet;
+}
+
+.sombra{
+    /* Webkit es utilizada por chrome
+    y moz usada por firefox
+    sin estos comandos, puede el proyecto funcionar igual*/
+    /* -webkit-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.38);
+    -moz-box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.38); */
+    box-shadow: -3px 3px 8px 0px rgba(0,0,0,0.38);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: .5rem;
+    margin: 0 auto;
+    max-width: 80rem;
+}
+/* Headings */
+h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h2{
+    font-size: 3.5rem;
+    text-align: left;
+
+}
+h3{
+    font-size: 1,8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+
+/* Modeling le pertenece a Etapa de modelamiento */
+p, .modeling, li{
+
+    max-width: 70%;
+}
+
+/*Agregando media querys para RESPONSIVE DESIGNS*/
+/*La estructura comprende un "@media(condicion){}"
+que permite ejecutar el codigo con una determinada resolucion*/
+@media(max-width: 768px){
+    /*LA condicion nos dice q a partir de un ancho
+    de pantalla minimo de 480px, mostrar:*/
+    p{
+        max-width: 100%;
+        color: black;
+    }
+}
+
+
+/* utilidades */
+.w-sm-100{
+    width: 100%;
+}
+@media (min-width: 768px){
+    .w-sm-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.contenedor_nav {
+    background-color: var(--amarillezco);
+   /* max-width: 120rem;  equivale -> 1200px*/
+    /*Ojo aca: El width lo que hace es forzar los 1200px
+    del ancho total de pantalla, sin autoacomodarse.
+    pero el max-width permite tomar los 1200px solo si esta disponible
+    sino que se automocomode*/
+    /*margin: 0 auto;*/
+
+    /*Tanto margin como padding aceptan 2 valores [1er0(arriba abajo), 2do(der, izq)]
+    o 4[arriba, derecha, abajo, izquierda], dependiendo
+    cuando es 1 valor (se aplica a los 4)*/
+
+ /* word-spacing: 7cm;*/
+ /* establezco como display el "flex" que me permita agarrar todo el contenido*/
+    display: flex;
+    flex-direction: column;
+    /*luego, lo centro o lo muevo al lado que desee*/
+    /*align-items: center;*/
+    max-width: 100%;
+    height: 1rem;
+
+}
+
+/* contenido HEROE */
+/*Agregamos imagenes con CSS3*/
+.heroe{
+    background-image: url(/img/married_shop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 410px;
+
+    /*Si contamos con un positio:absolute
+    del div de dentro  y con width: 100%;
+    height: 100%, debemos eliminar el pading
+    para que no interfiera
+    padding: 20px;*/
+    /*position relative para el padre*/
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+/*
+.heroe{
+    /*Tamaño original
+    width: 1920px;
+    height: 856px;
+}*/
+.container-heroe{
+    /*position absolute para el hijo*/
+    position: absolute;
+    /*width: 2rem;
+    height: 2rem;*/
+    /*1ra forma para agregar el fondo
+    color negro con transparencia, con sintaxis mas reciente*/
+    /*background-color: rgb(0 0 0 / 70%);*/
+    /*2da forma para agregar el fondo
+    color negro con transparencia*/
+    background-color: rgb(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    /*Estas son coordenadas:(usadas cuando usamos position:absolute)
+    usualmente son una variacion a usar:
+    width: 100%; height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /*-----------------------------------------*/
+    /*Ahora nos centraremos en colocar el contenido
+    de forma centrada*/
+    display: flex;
+    flex-direction: column;
+    /*En column con el align-items alineamos el contenido
+    horizontalmente*/
+    align-items: center;
+    /*Justify-content nos permite alinear
+    el contenido de column verticalmente*/
+    justify-content: center;
+}
+.container-heroe h2,
+.container-heroe p{
+    color: var(--blanco) ;
+    font-family: serif;
+}
+
+.container-heroe .ubicacion{
+    display: flex;
+    /*sin colocar flex-direction
+    ya tenemos que es row*/
+    align-items: flex-end;
+}
+
+footer{
+    text-align: center;
+}
+
+
+/*Etiquetas para  formato al contenido*/
+
+/* .fl_contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} */
+
+.responsive_contenido{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+   /*  width: min(60rem, 100%);
+    font-size: min(1.8rem, 100%);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem; */
+}
+
+/* .peculiaridad{
+    margin-left: 130px;
+} */
+
+/* .peculiaridad_2{
+    max-width: 350rem;
+    max-height: 40rem;
+    margin-left: 10rem;
+} */
+
+/* CSS PARA CONSULTAS - QUERY */
+/* Estilos para elementos <li> dentro de un <pre> */
+pre li{
+    margin-left: 10rem;
+}
+
+.texto_justificado{
+    text-align: justify;
+}
+
+
+/* colocar en contenedor */
+/* .lay_cubos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    text-align: start; */
+    /* padding: 0rem 5rem 0rem 5rem; */
+/* } */
+
+.cont-cuadros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-content: center;
+}
+
+/* estilo a las redes socials profesionales */
+.socialNetwork{
+   
+    margin-top: 5rem;
+    
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+/* git hub */
+.bi{
+
+    margin-left: 2rem;
+    
+    font-size: 2.5rem;
+    color: var(--amarillezco);
+}
