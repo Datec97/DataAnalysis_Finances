@@ -102,7 +102,7 @@ h1,h2,h3{
 
 /* Modeling le pertenece a Etapa de modelamiento */
 p, .modeling, li{
-
+    font-size: 1.5rem;
     max-width: 70%;
 }
 
@@ -255,15 +255,6 @@ footer{
     border-radius: 1rem; */
 }
 
-/* .peculiaridad{
-    margin-left: 130px;
-} */
-
-/* .peculiaridad_2{
-    max-width: 350rem;
-    max-height: 40rem;
-    margin-left: 10rem;
-} */
 
 /* CSS PARA CONSULTAS - QUERY */
 /* Estilos para elementos <li> dentro de un <pre> */
